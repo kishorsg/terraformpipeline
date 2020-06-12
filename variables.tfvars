@@ -5,9 +5,9 @@ variable "aws_region" {
 variable "project_name" {
   default = "la-terraform"
 }
-variable "access_key" {
+variable "aws_access_key" {
   default ="AWS_ACCESS_KEY_ID"
 }
-variable "secret_key" {
+variable "aws_secret_key" {
   default ="AWS_SECRET_ACCESS_KEY"
 }
