@@ -1,4 +1,7 @@
 node {
+ stage('SCM Checkout'){
+     git 'https://github.com/kishorsg/terraformpipeline'
+   }
 
  stage ('Terraform Init') {
       print "Init Provider" 
