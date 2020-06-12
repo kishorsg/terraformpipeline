@@ -16,7 +16,7 @@ node {
                        string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')]) {
         sh """
          set +x
-         terraform plan -var-file=variables.tfvars -out=create.tfplan 
+         terraform plan -out=create.tfplan 
          """
                        }  
     }
