@@ -14,10 +14,8 @@ node {
     stage ('Terraform Plan') {
       withCredentials([string(credentialsId: 'aws-access-key', variable: 'AWS_ACCESS_KEY_ID'), 
                        string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')]) {
-        sh """
-         set +x
-         terraform plan -out=create.tfplan 
-         """
+        sh "terraform plan -out=create.tfplan"
+         
                        }  
     }
 
@@ -27,10 +25,7 @@ node {
     stage ('Terraform Apply') {
       withCredentials([string(credentialsId: 'aws-access-key', variable: 'AWS_ACCESS_KEY_ID'), 
                        string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')]) {
-        sh """
-         set +x
-         terraform apply create.tfplan 
-         """
+        sh "terraform apply create.tfplan"
        }  
     }
 }
