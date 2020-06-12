@@ -17,7 +17,7 @@ node {
     stage ('Terraform Plan') {
       withCredentials([string(credentialsId: 'aws-access-key', variable: 'AWS_ACCESS_KEY_ID'), 
                        string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')]) {
-        sh "terraform plan -out=create.tfplan"
+        sh "terraform plan -var-file=variables.tf -out=create.tfplan"
          
                        }  
     }
