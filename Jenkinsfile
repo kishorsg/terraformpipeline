@@ -8,7 +8,7 @@ node {
 
     stage ('Terraform Validate') {
       print "Validating The TF Files"
-      sh "terraform validate -var-file=variables.tfvars"
+      sh "terraform validate"
     }
     
     stage ('Terraform Plan') {
